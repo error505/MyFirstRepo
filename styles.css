@@ -9,12 +9,16 @@ body {
 }
 
 .sidebar {
-  background-color: #1a855f;
-  width: 300px;
+  background-color: var(--main-theme-color);
+  width: 200px;
   height: 100vh;
   float: left;
   padding: 20px;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  flex-basis: 25%; /* Adjust as needed based on design preference */
+  padding-right: 20px; /* Adds padding to the right side of the sidebar */
+  transition: width 0.3s ease;
 }
 
 .profile-image {
@@ -86,8 +90,11 @@ body {
 }
 
 .main-content {
-  margin-left: 320px;
+  margin-left: 250px; /* Adjusted to match sidebar width */
   padding: 20px;
+  padding-left: 20px;
+  transition: margin-left 0.3s ease; /* Transition for the margin-left property */
+  flex: 1; /* This will ensure main content fills up the remaining space */
 }
 /* What I Do Header Section */
 .what-i-do-header {
@@ -193,4 +200,108 @@ button:hover {
 .service img {
   width: 100px; /* Adjust the width of service images */
   margin-bottom: 10px;
+}
+
+.portfolio-section {
+  padding: 50px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.portfolio-menu {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.portfolio-menu button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.portfolio-menu button.active {
+  background-color: var(--main-theme-color);
+  color: white;
+}
+.card-content {
+  padding: 1rem;
+}
+.card img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.dark-mode .portfolio-grid {
+  background-color: var(
+    --dark-mode-theme-collor
+  ); /* A darker background for the service in dark mode */
+  color: #ffffff; /* Light text color for better contrast against the dark background */
+}
+.dark-mode .portfolio-section {
+  background-color: var(
+    --dark-mode-theme-collor
+  ); /* A darker background for the service in dark mode */
+  color: #ffffff; /* Light text color for better contrast against the dark background */
+}
+.dark-mode .portfolio-menu {
+  margin: 20px 0;
+  color: #f8f8f8;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  text-align: left;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+  height: 100%;
+}
+
+#portfolio-section::before {
+  content: "";
+  display: block;
+  height: 80px; /* Adjust this value based on your needs */
+  margin: -80px 0 0; /* This should be the negative of the height value */
+}
+
+/* Overall Layout */
+.container {
+  display: flex;
 }
