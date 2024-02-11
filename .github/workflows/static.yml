@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'npm'
 
       - name: Check for package.json
@@ -32,7 +32,12 @@ jobs:
           if [ ! -f package.json ]; then
             npm init -y
           fi
-
+          
+      - name: Clear npm cache and update npm
+        run: |
+          npm cache clean --force
+          npm install -g npm@latest
+          
       - name: Install Dependencies
         run: |
           npm install eslint stylelint htmlhint --save-dev
@@ -42,11 +47,6 @@ jobs:
           if [ ! -f .eslintrc.* ]; then
             npm init @eslint/config --yes
           fi
-          
-      - name: Clear npm cache and update npm
-        run: |
-          npm cache clean --force
-          npm install -g npm@latest
 
       - name: Install project dependencies
         run: npm install
