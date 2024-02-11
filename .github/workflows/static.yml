@@ -42,8 +42,11 @@ jobs:
           if [ ! -f .eslintrc.* ]; then
             npm init @eslint/config --yes
           fi
-      - name: Clean Cache
-        run: npm cache clean --force
+          
+      - name: Clear npm cache and update npm
+        run: |
+          npm cache clean --force
+          npm install -g npm@latest
 
       - name: Install project dependencies
         run: npm install
