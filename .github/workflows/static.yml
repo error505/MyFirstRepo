@@ -25,12 +25,26 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+          cache: 'npm'
+
+      - name: Check for package.json
+        run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
 
       - name: Install Dependencies
         run: |
           npm install eslint stylelint htmlhint --save-dev
-          npm install
-          npm init @eslint/config
+
+      - name: Initialize ESLint Configuration
+        run: |
+          if [ ! -f .eslintrc.* ]; then
+            npm init @eslint/config --yes
+          fi
+
+      - name: Install project dependencies
+        run: npm install
 
       - name: Run ESLint
         run: npx eslint scripts.js
