@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# macOS filesystem files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Compiled output
+dist/
+build/
+
+# Cache directories
+.cache/
+
+# Logs
+logs/
+*.log
+
+# Error logs
+npm-debug.log
+yarn-error.log
+
+# Temporary files
+temp/
+
+# Coverage directory
+coverage/
