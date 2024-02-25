@@ -32,11 +32,11 @@ List the key features of your project. You can use bullet points for clarity:
 
 Explain how to get started with your project. Provide clear and concise instructions for setting up the environment and installing any necessary dependencies.
 
-### Prerequisites
+ Prerequisites
 
 List any software, libraries, or tools that users need to have installed before they can use your project. Include version requirements if necessary.
 
-### Installation
+ Installation
 
 Provide step-by-step instructions on how to install your project. You can use code blocks if applicable.
 
