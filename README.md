@@ -19,6 +19,10 @@ This project is a one-page portfolio website showcasing my skills, projects, and
 
 This portfolio website serves as a comprehensive showcase of my professional capabilities, including my work portfolio and insightful articles I've written. It's designed for potential employers, clients, and fellow professionals to quickly understand my expertise and project involvements.
 
+<p align="center">
+  <img src="images/one-page-portfolio.png" alt="one page portfolio web site">
+</p>
+
 ## Features
 
 - **What I Do**: An overview of my professional services and skills.
@@ -42,10 +46,10 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/error505/MyFirstRepo.git
+```
 
 Navigate to the project directory:
 
-```bash
 cd myfirstrepo
 
 Open the index.html file in your web browser to view the portfolio.
